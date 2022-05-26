@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 
-const url = "mongodb://mongo:27017";
+const url = "mongodb://mongdb:27017";
 const client = new MongoClient(url, { useNewUrlParser: true });
 
 exports.helloWorld = async (req, res) => {
