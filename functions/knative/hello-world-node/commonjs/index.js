@@ -1,3 +1,10 @@
-exports.helloWorld = (req, res) => {
-    res.send('hello, world');
+const { MongoClient } = require("mongodb");
+
+const url = "mongodb://mongo:27017";
+const client = new MongoClient(url, { useNewUrlParser: true });
+
+exports.helloWorld = async (req, res) => {
+    await client.connect();
+    console.log("连接成功");
+    res.send("访问成功");
 };
